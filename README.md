@@ -46,10 +46,6 @@ Ensure you have the following installed on your system:
 
 #### 1. Clone the Repository
 
-```bash
-- git clone https://github.com/RipunjayKumar/soft-engg-project-may-2025-se-May-1.git
-- cd soft-engg-project-may-2025-se-May-1
-
 Backend Setup
 - cd backend
 - python -m venv venv
@@ -71,17 +67,7 @@ Frontend Setup
 - npm install
 - npm run serve
 
-```
-
-## Contributors  
-
-- **Ripunjay Kumar** – 21f3002511@ds.study.iitm.ac.in  
-- **Aditya Choudhary** – 21f2000168@ds.study.iitm.ac.in  
-- **Aditya Nupani** – 23f1000873@ds.study.iitm.ac.in  
-- **Richa Jain** – 22f3002835@ds.study.iitm.ac.in  
-- **Nishtha Agarwal** – 23f1002687@ds.study.iitm.ac.in  
-- **Soham Gambhir** – 22f2000204@ds.study.iitm.ac.in  
-- **Ayush Labroo** – 21f3002283@ds.study.iitm.ac.in  
+``'
 
 
 ## License
