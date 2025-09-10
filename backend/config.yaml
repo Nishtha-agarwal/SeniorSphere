@@ -1,0 +1,11 @@
+app:
+  name : SeniorSphere
+  environment : development
+  debug : true
+  secret_key : secret_for_now
+
+database:
+  uri : "sqlite:///seniorsphere.sqlite3"
+
+jwt:
+  token_exipry_minutes : 20

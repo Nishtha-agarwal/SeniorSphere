@@ -1,0 +1,23 @@
+# roles.yaml
+roles:
+  - id: ADMIN
+    name: admin
+    permissions:
+      - manage_users
+      - assign_caretakers
+      - view_all_dashboards
+
+  - id: CARETAKER
+    name: caretaker
+    permissions:
+      - view_emergencies
+      - respond_sos
+      - update_missed_tasks
+      - answer_queries
+
+  - id: SENIOR
+    name: senior
+    permissions:
+      - view_routine
+      - raise_sos
+      - post_query
