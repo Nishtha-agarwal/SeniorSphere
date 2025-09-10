@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Monthly Report for {{ senior.fullName }}</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        h2 { color: #2c3e50; }
+        table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 8px; }
+        th { background-color: #f2f2f2; }
+    </style>
+</head>
+<body>
+    <h2>Monthly Report for {{ senior.fullName }}</h2>
+    <p>Age: {{ senior.age }}</p>
+    <p>Contact: {{ senior.contact }}</p>
+    <p>City: {{ senior.city }}, State: {{ senior.state }}</p>
+    <p>Emergency Contact: {{ senior.emergencyContactName }} ({{ senior.emergencyContact }})</p>
+    <p>
+        <strong>Assigned Caretaker:</strong>
+        {% if caretaker %}
+            {{ caretaker.fullName }} ({{ caretaker_contact }})
+        {% else %}
+            Not Assigned
+        {% endif %}
+    </p>
+    <hr>
+    <h3>Tasks Summary</h3>
+    <table>
+        <tr>
+            <th>Task</th>
+            <th>Time</th>
+            <th>Duration (min)</th>
+            <th>Status</th>
+            <th>Caretaker</th>
+        </tr>
+        {% for task in tasks %}
+        <tr>
+            <td>{{ task.taskDetails }}</td>
+            <td>{{ task.time.strftime("%Y-%m-%d %H:%M") }}</td>
+            <td>{{ task.duration }}</td>
+            <td>{{ "Completed" if task.status else "Pending" }}</td>
+            <td>
+                {% if task.caretaker %}
+                    {{ task.caretaker.fullName }}
+                {% else %}
+                    N/A
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <hr>
+    <h3>Queries Raised</h3>
+    <table>
+        <tr>
+            <th>Message</th>
+            <th>Status</th>
+            <th>Assigned Caretaker</th>
+            <th>Time</th>
+        </tr>
+        {% for query in queries %}
+        <tr>
+            <td>{{ query.message }}</td>
+            <td>{{ query.status }}</td>
+            <td>
+                {% if query.assignedCaretaker %}
+                    {{ query.assignedCaretaker.fullName }}
+                {% else %}
+                    N/A
+                {% endif %}
+            </td>
+            <td>{{ query.timeStamp.strftime("%Y-%m-%d %H:%M") }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
